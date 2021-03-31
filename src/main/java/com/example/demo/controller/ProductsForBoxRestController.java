@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.domain.Box;
+import com.example.demo.domain.ProductsForBox;
 import com.example.demo.service.WebShopService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -9,30 +10,30 @@ import javax.validation.Valid;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping("/api/box")
-public class BoxRestController {
+@RequestMapping("/api/productsforbox")
+public class ProductsForBoxRestController {
     @Autowired
     private WebShopService service;
 
     @GetMapping("/all")
-    public Iterable<Box> overview(){
-        return service.getAllBoxes();
+    public Iterable<ProductsForBox> overview(){
+        return service.getAllProductsForBox();
     }
 
     @GetMapping("/{id}")
-    public Box getBox(@PathVariable("id") long id) {
-        return service.getBox(id);
+    public ProductsForBox getBox(@PathVariable("id") long id) {
+        return service.getProductsForBox(id);
     }
 
     @PostMapping("/add")
-    public void addBox(@Valid Box box){
-        service.addBox(box);
+    public void addBox(@Valid ProductsForBox box){
+        service.addProductsForBox(box);
     }
 
     @DeleteMapping("/delete/{id}")
     public void deleteBox(@PathVariable("id") long id) {
-        if(service.getBox(id) != null) {
-            service.deleteBox(id);
+        if(service.getProductsForBox(id) != null) {
+            service.deleteProductsForBox(id);
         }
     }
 }
