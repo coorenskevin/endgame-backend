@@ -1,4 +1,4 @@
-package domain.model;
+package com.example.demo.domain.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -12,7 +12,7 @@ public class Box {
     private long id;
 
     @NotBlank(message="Box must belong to a customer")
-    private String customerId;
+    private String customer_id;
 
     public long getId() {
         return id;
@@ -23,10 +23,10 @@ public class Box {
     }
 
     public String getCustomerId() {
-        return customerId;
+        return customer_id;
     }
 
     public void setCustomerId(String customerId) {
-        this.customerId = customerId;
+        this.customer_id = customerId;
     }
 }

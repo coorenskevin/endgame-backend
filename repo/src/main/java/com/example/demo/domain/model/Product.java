@@ -1,4 +1,4 @@
-package domain.model;
+package com.example.demo.domain.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
@@ -12,6 +12,16 @@ public class Product{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    @NotBlank(message ="Description can't be empty")
+    private String description;
     @NotBlank(message="Category can't be empty")
     private String category;
 
@@ -22,7 +32,7 @@ public class Product{
     private double price;
 
     @Min(value= 0L, message="Amount can't be empty or null")
-    private int amount;
+    private int amountbought;
 
     public long getId() {
         return id;
@@ -56,13 +66,15 @@ public class Product{
         this.price = price;
     }
 
-    public int getAmount() {
-        return amount;
+    public int getAmountbought() {
+        return amountbought;
     }
 
-    public void setAmount(int amount) {
-        this.amount = amount;
+    public void setAmountbought(int amount) {
+        this.amountbought = amount;
     }
+
+
 
 
 }

@@ -1,7 +1,7 @@
-package domain.service;
+package com.example.demo.domain.service;
 
-import domain.db.ProductRepository;
-import domain.model.Product;
+import com.example.demo.domain.model.Product;
+import com.example.demo.domain.db.ProductRepository;
 import org.hibernate.service.spi.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 

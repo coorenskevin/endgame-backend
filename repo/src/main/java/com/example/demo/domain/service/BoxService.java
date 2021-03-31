@@ -1,7 +1,7 @@
-package domain.service;
+package com.example.demo.domain.service;
 
-import domain.db.BoxRepository;
-import domain.model.Box;
+import com.example.demo.domain.db.BoxRepository;
+import com.example.demo.domain.model.Box;
 import org.hibernate.service.spi.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

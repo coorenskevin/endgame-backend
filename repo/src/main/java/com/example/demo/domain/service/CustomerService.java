@@ -1,8 +1,8 @@
-package domain.service;
+package com.example.demo.domain.service;
 
 
-import domain.db.CustomerRepository;
-import domain.model.Customer;
+import com.example.demo.domain.db.CustomerRepository;
+import com.example.demo.domain.model.Customer;
 import org.hibernate.service.spi.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 

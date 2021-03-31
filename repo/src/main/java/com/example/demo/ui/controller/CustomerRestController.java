@@ -1,4 +1,4 @@
-package ui.controller;
+package com.example.demo.ui.controller;
 
 public class CustomerRestController {
 }
