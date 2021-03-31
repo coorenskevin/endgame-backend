@@ -22,16 +22,11 @@ public class AccessingDataJpaApplication {
         return (args) -> {
 
             // fetch all customers
-            log.info("Customers found with findAll():");
-            log.info("-------------------------------");
+            System.out.println("Products found with findAll():");
+            System.out.println("-------------------------------");
             for (Product product : repository.findAll()) {
-                System.out.println(product);
+                System.out.println("Product: " + product.getName());
             }
-            log.info("");
-
-
-
-
         };
     }
 
