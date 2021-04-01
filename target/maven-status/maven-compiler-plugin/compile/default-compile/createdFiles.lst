@@ -1,8 +1,1 @@
-com\example\demo\domain\Product.class
-com\example\demo\domain\Box.class
 com\example\demo\Application.class
-com\example\demo\service\WebShopService.class
-com\example\demo\db\BoxRepository.class
-com\example\demo\controller\BoxRestController.class
-com\example\demo\controller\ProductRestController.class
-com\example\demo\db\ProductRepository.class
