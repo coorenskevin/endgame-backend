@@ -19,7 +19,7 @@ public class CustomerRestController {
         return service.getAllCustomers();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/{email}")
     public Customer getCustomer(@PathVariable("email") String email) {
         return service.getCustomer(email);
     }
@@ -29,7 +29,7 @@ public class CustomerRestController {
         service.addCustomer(customer);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/delete/{email}")
     public void deleteCustomer(@PathVariable("email") String email) {
         if(service.getCustomer(email) != null) {
             service.deleteCustomer(email);
