@@ -13,7 +13,20 @@ package com.example.demo.db;
 
 import com.example.demo.domain.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
 
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
     public Customer findCustomerByEmail(String email);
+
+    /*    @Query("SELECT b FROM Bus b WHERE b.vertrekPlaats = ?1")
+    List<Bus> findBussenMetvertrekPlaats(String vertrekPlaats);*/
+
+    @Modifying
+    @Query("UPDATE Box b set b.customer_id = null WHERE b.customer_id =?1")
+    public void safeDeleteCustomerOne(String email);
+
+    @Modifying
+    @Query( "DELETE FROM Customer c WHERE c.email = ?1")
+    public void safeDeleteCustomerTwo(String email);
 }

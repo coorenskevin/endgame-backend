@@ -90,7 +90,8 @@ public class WebShopService {
     public void deleteCustomer(String email) {
         Customer customer = this.getCustomer(email);
         if (customer != null){
-            customerRepository.delete(customer);
+            customerRepository.safeDeleteCustomerOne(email);
+            customerRepository.safeDeleteCustomerTwo(email);
         }
     }
 

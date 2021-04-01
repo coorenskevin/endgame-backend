@@ -34,5 +34,6 @@ public class CustomerRestController {
         if(service.getCustomer(email) != null) {
             service.deleteCustomer(email);
         }
+
     }
 }
