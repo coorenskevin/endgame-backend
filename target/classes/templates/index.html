@@ -40,11 +40,15 @@
 
             <form method="post" action="/api/product/add" novalidate>
                 <p class="mb-3">
+                    <label>Name</label>
+                    <br>
                     <input type="text"  id="title"
                            required class="single-input">
 
                 </p>
                 <p class="mb-3">
+                    <label>Category</label>
+                    <br>
                     <input type="text"  id="category"
                            required class="single-input">
 
@@ -52,6 +56,8 @@
 
 
                 <p class="mb-3">
+                    <label>Description</label>
+                    <br>
                     <input type="text"  id="description"
                            required class="single-input">
 
@@ -59,26 +65,34 @@
 
 
                 <p class="mb-3">
+                    <label>Thumbnail url</label>
+                    <br>
                     <input type="text" id="thumbnail_url"
                            required class="single-input">
                 </p>
 
                 <p class="mb-3">
+                    <label>Quantity</label>
+                    <br>
                     <input type="integer" id="quantity"
                            required class="single-input">
                 </p>
 
                 <p class="mb-3">
+                    <label>Sold</label>
+                    <br>
                     <input type="integer"  id="sold"
                            required class="single-input">
                 </p>
 
                 <p class="mb-3">
+                    <label>Price</label>
+                    <br>
                     <input type="integer"  id="price"
                            required class="single-input">
                 </p>
 
-                <input onclick="addProduct()" type="submit" value="Add Product" class="btn btn-primary">
+                <input id="coolName" type="button" value="Add Product" class="btn btn-primary">
             </form>
         </div>
     </div>
@@ -86,6 +100,7 @@
 
 <script>
 
+    window.onload = function(){document.getElementById("coolName").addEventListener("click", addProduct)}
     let productRequest = new XMLHttpRequest();
     function addProduct () {
         let productTitle = document.getElementById("title").value;
