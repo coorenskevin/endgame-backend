@@ -23,10 +23,10 @@ public interface CustomerRepository extends JpaRepository<Customer, Long> {
     List<Bus> findBussenMetvertrekPlaats(String vertrekPlaats);*/
 
     @Modifying
-    @Query("UPDATE Box b set b.customer_id = null WHERE b.customer_id =?1")
+    @Query("UPDATE Box set customer_id = null WHERE customer_id =?1")
     public void safeDeleteCustomerOne(String email);
 
     @Modifying
-    @Query( "DELETE FROM Customer c WHERE c.email = ?1")
+    @Query( "DELETE FROM Customer WHERE email = ?1")
     public void safeDeleteCustomerTwo(String email);
 }
